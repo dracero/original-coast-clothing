@@ -81,7 +81,7 @@ module.exports = class Receive {
     let response;
 
     if (
-      (greeting && greeting.value == "trabajocr") ||
+      (greeting && greeting.value === "trabajocr") ||
       message.includes("start over")
     ) {
       //response = Response.genNuxMessage(this.user);
@@ -255,6 +255,12 @@ module.exports = class Receive {
   }
 
   firstEntity(nlp, name) {
-    return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0] && nlp.entities[name][1];
+    return (
+      nlp &&
+      nlp.entities &&
+      nlp.entities[name] &&
+      nlp.entities[name][0] &&
+      nlp.entities[name][1]
+    );
   }
 };
