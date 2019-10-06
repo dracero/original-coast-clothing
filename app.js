@@ -24,17 +24,6 @@ const express = require("express"),
 
 var users = {};
 
-let Wit = null;
-let log = null;
-try {
-  // if running from repo
-  Wit = require("../").Wit;
-  log = require("../").log;
-} catch (e) {
-  Wit = require("node-wit").Wit;
-  log = require("node-wit").log;
-}
-
 // Parse application/x-www-form-urlencoded
 app.use(
   urlencoded({
