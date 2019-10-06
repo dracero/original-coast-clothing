@@ -259,8 +259,7 @@ module.exports = class Receive {
       nlp &&
       nlp.entities &&
       nlp.entities[name] &&
-      nlp.entities[name][0] &&
-      nlp.entities[name][1]
+      nlp.entities[name][0][1]
     );
   }
 };
