@@ -74,14 +74,14 @@ module.exports = class Receive {
     );
 
     // check greeting is here and is confident
-    let greeting = this.firstEntity(this.webhookEvent.message.nlp, "intent");
+    let greeting = this.firstEntity(this.webhookEvent.message.nlp, "trabajo");
 
     let message = this.webhookEvent.message.text.trim().toLowerCase();
 
     let response;
 
     if (
-      (greeting && greeting.value === "trabajocr") ||
+      (greeting && greeting.confidence > 0.8) ||
       message.includes("start over")
     ) {
       //response = Response.genNuxMessage(this.user);
@@ -259,8 +259,7 @@ module.exports = class Receive {
       nlp &&
       nlp.entities &&
       nlp.entities[name] &&
-      nlp.entities[name][0] &&
-      nlp.entities[name][1] 
+      nlp.entities[name][0]
     );
   }
 };
