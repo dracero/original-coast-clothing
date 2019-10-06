@@ -81,10 +81,11 @@ module.exports = class Receive {
     let response;
 
     if (
-      (greeting && greeting.confidence > 0.8) ||
+      (greeting && greeting.value == "trabajocr") ||
       message.includes("start over")
     ) {
-      response = Response.genNuxMessage(this.user);
+      //response = Response.genNuxMessage(this.user);
+      response = Order.handlePayload("ORDER_NUMBER");
     } else if (Number(message)) {
       response = Order.handlePayload("ORDER_NUMBER");
     } else if (message.includes("#")) {
@@ -254,6 +255,6 @@ module.exports = class Receive {
   }
 
   firstEntity(nlp, name) {
-    return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
+    return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0] && nlp.entities[name][1];
   }
 };
