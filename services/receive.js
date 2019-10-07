@@ -86,7 +86,7 @@ module.exports = class Receive {
       message.includes("start over")
     ) {
       //response = Response.genNuxMessage(this.user);
-      response = TestDiego.handlePayload("PAGINA1");
+      response = TestDiego.handlePayload("PAGINA3");
     } else if (Number(message)) {
       response = Order.handlePayload("ORDER_NUMBER");
     } else if (message.includes("#")) {
