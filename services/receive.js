@@ -16,6 +16,7 @@ const Curation = require("./curation"),
   Care = require("./care"),
   Survey = require("./survey"),
   GraphAPi = require("./graph-api"),
+  TestDiego = require("./page.js"),    
   i18n = require("../i18n.config");
 
 module.exports = class Receive {
@@ -85,7 +86,7 @@ module.exports = class Receive {
       message.includes("start over")
     ) {
       //response = Response.genNuxMessage(this.user);
-      response = Order.handlePayload("LINK_ORDER");
+      response = TestDiego.handlePayload("PAGINA1");
     } else if (Number(message)) {
       response = Order.handlePayload("ORDER_NUMBER");
     } else if (message.includes("#")) {
