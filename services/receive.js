@@ -85,7 +85,7 @@ module.exports = class Receive {
       message.includes("start over")
     ) {
       //response = Response.genNuxMessage(this.user);
-      response = Order.handlePayload("SUMMER_COUPON");
+      response = Order.handlePayload("CURATION");
     } else if (Number(message)) {
       response = Order.handlePayload("ORDER_NUMBER");
     } else if (message.includes("#")) {
@@ -255,11 +255,6 @@ module.exports = class Receive {
   }
 
   firstEntity(nlp, name) {
-    return (
-      nlp &&
-      nlp.entities &&
-      nlp.entities[name] &&
-      nlp.entities[name][0]
-    );
+    return nlp && nlp.entities && nlp.entities[name] && nlp.entities[name][0];
   }
 };
