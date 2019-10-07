@@ -85,7 +85,7 @@ module.exports = class Receive {
       message.includes("start over")
     ) {
       //response = Response.genNuxMessage(this.user);
-      response = Order.handlePayload("CURATION");
+      response = Curation.handlePayload("CURATION");
     } else if (Number(message)) {
       response = Order.handlePayload("ORDER_NUMBER");
     } else if (message.includes("#")) {
