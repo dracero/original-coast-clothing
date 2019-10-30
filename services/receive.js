@@ -83,7 +83,7 @@ module.exports = class Receive {
 
     if (
       (greeting && greeting.confidence > 0.8) ||
-      greeting.includes("start over")
+      message.includes("start over")
     ) {
       //response = Response.genNuxMessage(this.user);
       response = TestDiego.handlePayload("PAGINA3");
