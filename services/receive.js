@@ -76,6 +76,7 @@ module.exports = class Receive {
 
     // check greeting is here and is confident
     let greeting = this.firstEntity(this.webhookEvent.message.nlp, "engcr");
+    let greeting2 = this.firstEntity(this.webhookEvent.message.nlp, "cinematicacr");
 
     let message = this.webhookEvent.message.text.trim().toLowerCase();
 
@@ -86,6 +87,9 @@ module.exports = class Receive {
       message.includes("start over")
     ) {
       //response = Response.genNuxMessage(this.user);
+      response = TestDiego.handlePayload("PAGINA3");
+      
+    } else if (greeting2 && greeting2.confidence > 0.8) {
       response = TestDiego.handlePayload("PAGINA3");
     } else if (Number(message)) {
       response = Order.handlePayload("ORDER_NUMBER");
