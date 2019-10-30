@@ -82,13 +82,9 @@ module.exports = class Receive {
 
     let response;
 
-    if (
-      (greeting && greeting.confidence > 0.8) ||
-      message.includes("start over")
-    ) {
-      //response = Response.genNuxMessage(this.user);
-      response = TestDiego.handlePayload("PAGINA3");
-      
+    if ((greeting && greeting.confidence > 0.8) || message.includes("start over")) 
+    {
+      response = TestDiego.handlePayload("PAGINA2");
     } else if (greeting2 && greeting2.confidence > 0.8) {
       response = TestDiego.handlePayload("PAGINA3");
     } else if (Number(message)) {
