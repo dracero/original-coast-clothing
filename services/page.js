@@ -14,7 +14,7 @@
 const Response = require("./response"),
   i18n = require("../i18n.config"),
   config = require("./config");
-
+//tener en cuenta que lo que usa para responder es es_LA.json - hay que cambiar todos esos diálogos
 module.exports = class TestDiego {
   static handlePayload(payload) {
     let response;
