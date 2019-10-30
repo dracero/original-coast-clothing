@@ -75,7 +75,7 @@ module.exports = class Receive {
     );
 
     // check greeting is here and is confident
-    let greeting = this.firstEntity(this.webhookEvent.message.nlp, "trabajo");
+    let greeting = this.firstEntity(this.webhookEvent.message.nlp, "engcr");
 
     let message = this.webhookEvent.message.text.trim().toLowerCase();
 
