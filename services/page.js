@@ -37,7 +37,7 @@ module.exports = class TestDiego {
           Response.genText(i18n.__("order.dialog")),
           Response.genText(i18n.__("order.searching")),
           Response.genImageTemplate(
-            `${config.appUrl}/styles/female-party.jpg`,
+            `${config.appUrl}/styles/female-party.jpg`,//en la carpeta sytles estàn las imàgenes
             i18n.__("order.status")
           )
         ];
